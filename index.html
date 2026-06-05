@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator Pro</title>
+    <title>QR Code CPDKK</title>
     <!-- [ข้อ 4] โหลด Tailwind แบบ async ไม่บล็อก render -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@300;400;500;600;700&family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root { 
@@ -64,7 +64,7 @@
                         <img src="https://img2.pic.in.th/393a2076f179a3823.png" alt="Logo CPDKK" class="h-8 w-auto object-contain" onerror="this.style.display='none'">
                         <span class="font-bold text-lg sm:text-xl tracking-tight theme-text">QR Code CPDKK</span>
                     </div>
-                    <button id="auth-btn" onclick="handleAuth()" class="sm:hidden px-3 py-1.5 bg-white text-emerald-600 rounded-lg font-bold text-xs border border-gray-200 shadow-sm transition-all">ADMIN</button>
+                    <button id="auth-btn" onclick="handleAuth()" class="sm:hidden px-3 py-1.5 bg-white text-emerald-600 rounded-lg font-bold text-xs border border-gray-200 shadow-sm transition-all">เข้าสู่ระบบ</button>
                 </div>
 
                 <div class="flex bg-white/50 p-1 rounded-xl border border-white shadow-sm text-xs sm:text-sm overflow-x-auto w-full sm:w-auto justify-center mx-auto sm:mx-0">
@@ -83,7 +83,7 @@
 
                 <button id="auth-btn-desktop" onclick="handleAuth()" class="hidden sm:flex px-4 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg font-bold text-sm border border-emerald-100 hover:bg-emerald-100 shadow-sm transition-all items-center gap-2">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
-                    <span>ADMIN</span>
+                    <span>เข้าสู่ระบบ</span>
                 </button>
             </div>
         </div>
@@ -230,51 +230,6 @@
                         <div>
                             <h2 class="text-base sm:text-lg font-bold mb-3 flex items-center gap-2">
                                 <span class="theme-gradient text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shadow-lg">2</span>
-                                <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
-                                โลโก้แบรนด์
-                            </h2>
-                            <div class="flex flex-col gap-3">
-
-                                <!-- Upload Button — เด่นอยู่บนสุด -->
-                                <label for="logoInput" class="cursor-pointer btn-magic text-white px-4 py-3 rounded-xl font-bold shadow-md hover:shadow-lg transition-all text-sm flex items-center justify-center gap-2 border border-white/20">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
-                                    อัปโหลดโลโก้ด้วยตนเอง
-                                </label>
-                                <input type="file" id="logoInput" accept="image/*" onchange="handleLogoUpload(event)">
-
-                                <!-- Divider -->
-                                <div class="flex items-center gap-2">
-                                    <div class="flex-1 h-px bg-gray-200"></div>
-                                    <span class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">หรือ</span>
-                                    <div class="flex-1 h-px bg-gray-200"></div>
-                                </div>
-
-                                <div id="preset-logos-section" class="flex flex-col gap-1.5">
-                                    <span class="text-xs font-semibold text-gray-500">เลือกโลโก้ที่ใช้บ่อย:</span>
-                                    <div id="preset-logos-container" class="flex flex-wrap gap-2 min-h-[3rem] items-center">
-                                        <div id="preset-logos-loading" class="flex items-center gap-1.5">
-                                            <span class="spinner border-t-emerald-500 w-4 h-4 border-[2px]"></span>
-                                            <span class="text-[10px] text-gray-400">กำลังโหลด...</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button onclick="removeLogo()" id="removeLogoBtn" class="hidden px-4 py-2 text-xs font-medium text-red-500 hover:bg-red-50 rounded-lg transition-all border border-red-100">ลบโลโก้ออก</button>
-                                
-                                <div id="logo-size-container" class="hidden w-full bg-white/50 p-3 rounded-xl border border-white mt-1">
-                                    <label class="flex justify-between text-xs font-semibold text-gray-700 mb-2">
-                                        <span>ปรับขนาดโลโก้</span>
-                                        <span id="logo-size-label" class="theme-text-solid font-bold">40%</span>
-                                    </label>
-                                    <input type="range" id="logoSize" min="0.1" max="0.6" step="0.05" value="0.4" oninput="updateLogoSizeLabel(); updateQR()" class="w-full cursor-pointer h-1.5 bg-gray-200 rounded-lg appearance-none">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between">
-                        <div>
-                            <h2 class="text-base sm:text-lg font-bold mb-3 flex items-center gap-2">
-                                <span class="theme-gradient text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shadow-lg">3</span>
                                 <svg class="w-4 h-4 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
                                 สีสันและสไตล์
                             </h2>
@@ -306,25 +261,42 @@
                                         </select>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                <!-- ข้อความใต้ QR -->
-                                <div class="flex flex-col gap-1.5">
-                                    <label class="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">ข้อความใต้ QR</label>
-                                    <input type="text" id="qrCaption" placeholder="เช่น Scan Me / ชื่อหน่วยงาน" oninput="updateQR()" maxlength="60"
-                                        class="w-full text-xs px-3 py-2.5 rounded-xl border-0 ring-1 ring-gray-200 bg-white/80 outline-none font-medium focus:ring-2 focus:ring-emerald-400 transition-all">
-                                    <div class="grid grid-cols-3 gap-2">
-                                        <div class="flex items-center justify-between p-2 rounded-xl bg-white/50 border border-white col-span-1">
-                                            <label class="text-[10px] font-semibold text-gray-500">สี</label>
-                                            <input type="color" id="qrCaptionColor" value="#333333" onchange="updateQR()" class="w-6 h-6 rounded-full cursor-pointer border border-white ring-1 ring-gray-200">
-                                        </div>
-                                        <div class="col-span-2">
-                                            <select id="qrCaptionSize" onchange="updateQR()" class="w-full text-xs px-3 py-2 rounded-xl border-0 ring-1 ring-gray-200 bg-white/80 outline-none appearance-none font-medium">
-                                                <option value="small">เล็ก</option>
-                                                <option value="medium" selected>กลาง</option>
-                                                <option value="large">ใหญ่</option>
-                                            </select>
+                    <div class="glass-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between">
+                        <div>
+                            <h2 class="text-base sm:text-lg font-bold mb-3 flex items-center gap-2">
+                                <span class="theme-gradient text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shadow-lg">3</span>
+                                <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                                โลโก้แบรนด์
+                            </h2>
+                            <div class="flex flex-col gap-3">
+                                
+                                <div id="preset-logos-section" class="flex flex-col gap-1.5">
+                                    <span class="text-xs font-semibold text-gray-500">เลือกโลโก้ที่ใช้บ่อย:</span>
+                                    <div id="preset-logos-container" class="flex flex-wrap gap-2 min-h-[3rem] items-center">
+                                        <div id="preset-logos-loading" class="flex items-center gap-1.5">
+                                            <span class="spinner border-t-emerald-500 w-4 h-4 border-[2px]"></span>
+                                            <span class="text-[10px] text-gray-400">กำลังโหลด...</span>
                                         </div>
                                     </div>
+                                </div>
+
+                                <label for="logoInput" class="cursor-pointer bg-white text-gray-700 px-4 py-2.5 rounded-xl font-semibold shadow-sm hover:shadow transition-all text-xs flex items-center justify-center gap-2 border border-gray-100">
+                                    <svg class="w-4 h-4 theme-text-solid" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                    อัปโหลดโลโก้ด้วยตนเอง
+                                </label>
+                                <input type="file" id="logoInput" accept="image/*" onchange="handleLogoUpload(event)">
+                                <button onclick="removeLogo()" id="removeLogoBtn" class="hidden px-4 py-2 text-xs font-medium text-red-500 hover:bg-red-50 rounded-lg transition-all border border-red-100">ลบโลโก้ออก</button>
+                                
+                                <div id="logo-size-container" class="hidden w-full bg-white/50 p-3 rounded-xl border border-white mt-1">
+                                    <label class="flex justify-between text-xs font-semibold text-gray-700 mb-2">
+                                        <span>ปรับขนาดโลโก้</span>
+                                        <span id="logo-size-label" class="theme-text-solid font-bold">40%</span>
+                                    </label>
+                                    <input type="range" id="logoSize" min="0.1" max="0.6" step="0.05" value="0.4" oninput="updateLogoSizeLabel(); updateQR()" class="w-full cursor-pointer h-1.5 bg-gray-200 rounded-lg appearance-none">
                                 </div>
                             </div>
                         </div>
@@ -333,25 +305,18 @@
             </div>
 
             <!-- QR Preview Panel -->
-            <div class="lg:w-1/4 flex justify-center">
-                <div class="sticky top-20 glass-card rounded-2xl p-3 sm:p-4 flex flex-col items-center shadow-xl border-white mx-auto">
+            <div class="lg:w-1/4">
+                <div class="sticky top-20 glass-card rounded-2xl p-3 sm:p-4 flex flex-col items-center shadow-xl border-white">
                     <div class="w-full border-b border-gray-100 pb-2 mb-3">
                         <h2 class="text-sm font-bold text-gray-800 text-center">พรีวิว QR Code</h2>
                     </div>
-                    <!-- QR Preview Container — QR + caption ในกล่องขาวเดียวกัน เหมือน PNG -->
-                    <div id="canvas-container" class="bg-white rounded-xl shadow-inner border border-gray-100 mb-3 w-full max-w-[220px] sm:max-w-[240px] lg:max-w-full relative flex flex-col items-center justify-center transition-all hover:scale-[1.02] duration-300 overflow-hidden">
-                        <!-- QR area -->
-                        <div class="relative w-full aspect-square flex items-center justify-center p-2 sm:p-3">
-                            <div id="qr-empty-state" class="absolute inset-0 flex flex-col items-center justify-center text-gray-400">
-                                <svg class="w-8 h-8 mb-1 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path></svg>
-                                <span class="text-[10px] font-medium">รอการกรอกข้อมูล...</span>
-                            </div>
-                            <div id="qr-code-wrapper" class="relative z-10 w-full h-full flex justify-center items-center"></div>
+                    <!-- [ข้อ 3] ลด padding และกำหนดขนาด max-w ให้พอดีกับพื้นที่ -->
+                    <div id="canvas-container" class="bg-white p-2 sm:p-3 rounded-xl shadow-inner border border-gray-100 mb-3 w-full max-w-[220px] sm:max-w-[240px] lg:max-w-full aspect-square relative flex items-center justify-center transition-all hover:scale-[1.02] duration-300">
+                        <div id="qr-empty-state" class="absolute inset-0 flex flex-col items-center justify-center text-gray-400">
+                            <svg class="w-8 h-8 mb-1 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path></svg>
+                            <span class="text-[10px] font-medium">รอการกรอกข้อมูล...</span>
                         </div>
-                        <!-- Caption: ชิดใต้ QR ในกล่องขาวเดียวกัน ไม่มี gap -->
-                        <div id="qr-caption-preview-row" class="hidden w-full text-center px-3 pb-3" style="margin-top:-4px;">
-                            <span id="qr-caption-preview-text" class="font-semibold" style="font-family:Sarabun,sans-serif;font-size:13px;color:#333;"></span>
-                        </div>
+                        <div id="qr-code-wrapper" class="relative z-10 w-full h-full flex justify-center items-center"></div>
                     </div>
                     
                     <div class="w-full space-y-2">
@@ -380,10 +345,7 @@
                         
                         <button onclick="generateAndDownloadQR('svg')" class="w-full bg-white text-gray-700 font-semibold py-2.5 rounded-xl border border-gray-200 hover:bg-gray-50 flex justify-center items-center gap-2 text-xs">โหลดไฟล์เวกเตอร์ (SVG)</button>
                     </div>
-                    <div id="tracking-notice" class="hidden mt-2 bg-green-50 text-emerald-800 text-[10px] p-2 rounded-lg border border-green-200 w-full text-center font-medium">บันทึกประวัติ: <b>เปิดใช้งาน</b></div>
-                </div>
-            </div>
-        </div>
+              
 
         <div id="section-stats" class="tab-content glass-card rounded-2xl p-5 sm:p-8">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 border-b border-gray-200/50 pb-3 sm:pb-4 gap-3">
@@ -468,7 +430,7 @@
         // GitHub Pages ต้องเรียก Apps Script Web App ผ่าน URL นี้
         // ถ้าเปิดผ่าน Apps Script ค่า <?= scriptUrl ?> จะถูกแทนให้อัตโนมัติ
         // ถ้าเปิดผ่าน GitHub Pages ให้แทนค่าด้านล่างเป็น URL ที่ลงท้ายด้วย /exec
-        var APPS_SCRIPT_WEB_APP_URL = '<?= scriptUrl ?>';
+        var APPS_SCRIPT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyzSoejBCpLfF5U-ttfnJKeY02B2gaH-8XHPWTjatuPT78BGZW_MzqsjVdtfYPzMTKy4g/exec';
         var DEFAULT_DRIVE_FOLDER_ID = '1XLSia776o2OarriqKFWTXD-Fu9DVYOZ9';
 
         function getAppsScriptWebAppUrl() {
@@ -722,14 +684,6 @@
                 { label: 'LINE', base64: 'data:image/jpeg;base64,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' }
 ,
                 { label: 'LINE OA', base64: 'data:image/jpeg;base64,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' }
-,
-                { label: 'TikTok', base64: 'data:image/jpeg;base64,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' }
-,
-                { label: 'ZOOM', base64: 'data:image/png;base64,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' }
-,
-                { label: 'Google Meet', base64: 'data:image/png;base64,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' }
-,
-                { label: 'TEAM', base64: 'data:image/png;base64,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' }
             ];
 
             var container = document.getElementById('preset-logos-container');
@@ -810,7 +764,7 @@
                 var btnMobile = document.getElementById('auth-btn');
                 var btnDesktop = document.getElementById('auth-btn-desktop');
                 if (btnMobile) {
-                    btnMobile.innerText = 'ADMIN';
+                    btnMobile.innerText = 'เข้าสู่ระบบ';
                     btnMobile.classList.replace('text-red-500', 'text-emerald-600');
                 }
                 if (btnDesktop) {
@@ -818,7 +772,7 @@
                     btnDesktop.classList.replace('text-red-600', 'text-emerald-700');
                     btnDesktop.classList.replace('border-red-100', 'border-emerald-100');
                     btnDesktop.classList.replace('hover:bg-red-100', 'hover:bg-emerald-100');
-                    btnDesktop.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg><span>ADMIN</span>';
+                    btnDesktop.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg><span>เข้าสู่ระบบ</span>';
                 }
                 applyGuestMode();
                 Toast.fire({ icon: 'info', title: 'ออกจากระบบเรียบร้อย' });
@@ -990,10 +944,6 @@
             var qrColorLight = document.getElementById('qrColorLight').value;
             var dotsType = document.getElementById('dotsType').value;
             var logoSize = parseFloat(document.getElementById('logoSize').value);
-            var caption = document.getElementById('qrCaption') ? document.getElementById('qrCaption').value.trim() : '';
-            var captionColor = document.getElementById('qrCaptionColor') ? document.getElementById('qrCaptionColor').value : '#333333';
-            var captionSize = document.getElementById('qrCaptionSize') ? document.getElementById('qrCaptionSize').value : 'medium';
-
             qrCode.update({ 
                 data: safeData, image: uploadedLogo || "", dotsOptions: { color: qrColorDark, type: dotsType }, 
                 backgroundOptions: { color: qrColorLight }, cornersSquareOptions: { type: cornersType, color: qrColorDark }, 
@@ -1001,59 +951,7 @@
                 imageOptions: { crossOrigin: "anonymous", margin: 2, imageSize: logoSize } 
             });
             qrCode.append(wrapper);
-
-            // แสดง caption ใน preview — sync เหมือน PNG export
-            if (caption) {
-                setTimeout(function() {
-                    var row = document.getElementById('qr-caption-preview-row');
-                    var txt = document.getElementById('qr-caption-preview-text');
-                    var sizeMap = { small: '11px', medium: '14px', large: '17px' };
-                    txt.style.fontSize = sizeMap[captionSize] || '14px';
-                    txt.style.color = captionColor;
-                    txt.style.fontFamily = 'Sarabun, sans-serif';
-                    txt.textContent = caption;
-                    // sync background ให้เหมือนพื้น QR
-                    row.style.backgroundColor = qrColorLight;
-                    txt.style.backgroundColor = qrColorLight;
-                    row.classList.remove('hidden');
-                }, 120);
-            } else {
-                setTimeout(function() {
-                    var row = document.getElementById('qr-caption-preview-row');
-                    if (row) row.classList.add('hidden');
-                }, 120);
-            }
-
             if (isTracking && data) document.getElementById('tracking-notice').classList.remove('hidden'); else document.getElementById('tracking-notice').classList.add('hidden');
-        }
-
-        // helper: สร้าง canvas รวม QR + caption สำหรับ export
-        function buildExportCanvas(qrStylingInstance, size, caption, captionColor, captionSize, bgColor, callback) {
-            if (!caption) { callback(null); return; }
-            var fontPxMap = { small: Math.round(size * 0.038), medium: Math.round(size * 0.052), large: Math.round(size * 0.068) };
-            var fontPx = fontPxMap[captionSize] || Math.round(size * 0.052);
-            var padding = Math.round(fontPx * 1.8);
-            qrStylingInstance.getRawData("png").then(function(blob) {
-                var img = new Image();
-                var url = URL.createObjectURL(blob);
-                img.onload = function() {
-                    var canvas = document.createElement('canvas');
-                    canvas.width = size;
-                    canvas.height = size + padding;
-                    var ctx = canvas.getContext('2d');
-                    ctx.fillStyle = bgColor;
-                    ctx.fillRect(0, 0, canvas.width, canvas.height);
-                    ctx.drawImage(img, 0, 0, size, size);
-                    ctx.fillStyle = captionColor;
-                    ctx.font = 'bold ' + fontPx + 'px Sarabun, sans-serif';
-                    ctx.textAlign = 'center';
-                    ctx.textBaseline = 'middle';
-                    ctx.fillText(caption, size / 2, size + padding / 2);
-                    URL.revokeObjectURL(url);
-                    callback(canvas);
-                };
-                img.src = url;
-            });
         }
 
         // ==========================================
@@ -1067,9 +965,6 @@
             var dotsType = document.getElementById('dotsType').value;
             var cornersType = document.getElementById('cornersType').value;
             var logoSize = parseFloat(document.getElementById('logoSize').value);
-            var caption = document.getElementById('qrCaption') ? document.getElementById('qrCaption').value.trim() : '';
-            var captionColor = document.getElementById('qrCaptionColor') ? document.getElementById('qrCaptionColor').value : '#333333';
-            var captionSize = document.getElementById('qrCaptionSize') ? document.getElementById('qrCaptionSize').value : 'medium';
             var safeData = dataToLog || "";
             try { safeData = unescape(encodeURIComponent(safeData)); } catch(e) {}
 
@@ -1090,19 +985,8 @@
                 cornersDotOptions: { type: (cornersType === 'square' ? 'square' : 'dot'), color: qrColorDark },
                 imageOptions: { crossOrigin: "anonymous", margin: Math.round(downloadSize * 0.008), imageSize: logoSize }
             });
-
-            if (caption) {
-                buildExportCanvas(downloadQR, downloadSize, caption, captionColor, captionSize, qrColorLight, function(canvas) {
-                    var link = document.createElement('a');
-                    link.download = "QR_" + Date.now() + ".png";
-                    link.href = canvas.toDataURL('image/png');
-                    link.click();
-                    Toast.fire({ icon: 'success', title: 'ดาวน์โหลดสำเร็จ (พร้อมข้อความ)' });
-                });
-            } else {
-                downloadQR.download({ name: "QR_" + Date.now(), extension: 'png' });
-                Toast.fire({ icon: 'success', title: 'ดาวน์โหลดสำเร็จ (' + downloadSize + 'x' + downloadSize + 'px)' });
-            }
+            downloadQR.download({ name: "QR_" + Date.now(), extension: 'png' });
+            Toast.fire({ icon: 'success', title: 'ดาวน์โหลดสำเร็จ (' + downloadSize + 'x' + downloadSize + 'px)' });
         }
 
         // ==========================================
@@ -1124,9 +1008,6 @@
             var dotsType = document.getElementById('dotsType').value;
             var cornersType = document.getElementById('cornersType').value;
             var logoSize = parseFloat(document.getElementById('logoSize').value);
-            var caption = document.getElementById('qrCaption') ? document.getElementById('qrCaption').value.trim() : '';
-            var captionColor = document.getElementById('qrCaptionColor') ? document.getElementById('qrCaptionColor').value : '#333333';
-            var captionSize = document.getElementById('qrCaptionSize') ? document.getElementById('qrCaptionSize').value : 'medium';
             var safeData = dataToLog || "";
             try { safeData = unescape(encodeURIComponent(safeData)); } catch(e) {}
 
@@ -1140,19 +1021,9 @@
                 imageOptions: { crossOrigin: "anonymous", margin: Math.round(downloadSize * 0.008), imageSize: logoSize }
             });
 
-            // Step 1: ดาวน์โหลดไฟล์ PNG ก่อนทันที (รวม caption ถ้ามี)
-            if (caption) {
-                buildExportCanvas(saveQR, downloadSize, caption, captionColor, captionSize, qrColorLight, function(canvas) {
-                    var link = document.createElement('a');
-                    link.download = "QR_" + Date.now() + ".png";
-                    link.href = canvas.toDataURL('image/png');
-                    link.click();
-                    Toast.fire({ icon: 'success', title: 'กำลังดาวน์โหลด PNG (พร้อมข้อความ)...' });
-                });
-            } else {
-                saveQR.download({ name: "QR_" + Date.now(), extension: 'png' });
-                Toast.fire({ icon: 'success', title: 'กำลังดาวน์โหลด PNG...' });
-            }
+            // Step 1: ดาวน์โหลดไฟล์ PNG ก่อนทันที
+            saveQR.download({ name: "QR_" + Date.now(), extension: 'png' });
+            Toast.fire({ icon: 'success', title: 'กำลังดาวน์โหลด PNG...' });
 
             // Step 2: บันทึก Drive + บันทึกประวัติ
             Swal.fire({ title: 'กำลังบันทึกลง Drive...', html: 'กรุณารอสักครู่ ระบบกำลังสร้างโฟลเดอร์', allowOutsideClick: false, didOpen: function() { Swal.showLoading(); } });
