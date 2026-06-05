@@ -430,8 +430,7 @@
         // GitHub Pages ต้องเรียก Apps Script Web App ผ่าน URL นี้
         // ถ้าเปิดผ่าน Apps Script ค่า <?= scriptUrl ?> จะถูกแทนให้อัตโนมัติ
         // ถ้าเปิดผ่าน GitHub Pages ให้แทนค่าด้านล่างเป็น URL ที่ลงท้ายด้วย /exec
-        var APPS_SCRIPT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyzSoejBCpLfF5U-ttfnJKeY02B2gaH-8XHPWTjatuPT78BGZW_MzqsjVdtfYPzMTKy4g/exec';
-        var DEFAULT_DRIVE_FOLDER_ID = '1XLSia776o2OarriqKFWTXD-Fu9DVYOZ9';
+        var APPS_SCRIPT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwIHKRNRWr03ZNpdYyu0Fm9L729HgDLmY5Z3WJK6W-Eudy3vnPBakAu-iQ5Qy_cOPysiw/exec';
 
         function getAppsScriptWebAppUrl() {
             var queryUrl = new URLSearchParams(window.location.search).get('appsScriptUrl');
